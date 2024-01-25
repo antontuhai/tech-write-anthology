@@ -1,0 +1,13 @@
+{
+  "name": "techwriteme",
+  "description": "",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@antora/cli": "3.1.7",
+    "@antora/site-generator": "3.1.7"
+  },
+  "scripts": {
+    "build": "antora site.yml"
+  },
+  "license": "MIT"
+}

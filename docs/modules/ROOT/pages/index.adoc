@@ -1,0 +1,34 @@
+= Tech Write Me
+:toc-title: On this page:
+:toc: auto
+:toclevels: 5
+:experimental:
+:sectnumlevels: 5
+:sectanchors:
+:sectlinks:
+:partnums:
+
+== Welcome to Tech Write Me!
+
+Here's a space where tech writing comes alive. *_Tech Write Me_* is an open-source project that shares and enhances tech writing knowledge. Think of us as a collaborative playground for documents, ideas, and fun.
+
+image:techwriteme-logo.png[]
+
+== Explore tech writing like never before
+
+* [*] *Discover*: From user guides to API documentation, find samples that spark ideas.
+* [*] *Learn*: Gain insights from various technical and content writing perspectives.
+* [*] *Share*: Got a great doc sample? Contribute and enrich our community.
+
+== Dive into our collection
+
+* [*] xref:user:user-overview.adoc[User Overview] - User experience, simplified.
+* [*] xref:admin:admin-overview.adoc[Admin Overview] - For the wizards of admin work.
+* [*] xref:api:api-overview.adoc[API Overview] - APIs decoded.
+* [*] xref:sdk:sdk-overview.adoc[SDK Overview] - Your SDK guidebook.
+
+== Your contribution counts
+
+Got a knack for tech writing? Your contributions are what make this community thrive. Join us at https://github.com/antontuhai/techwriteme[GitHub - Tech Write Me] and help shape the future of technical documentation.
+
+*_Tech Write Me_* is more than a project; it's where your writing makes a difference.
