@@ -1,6 +1,6 @@
 = Tech Write Me
 :toc-title: On this page:
-//:toc: auto
+:toc: auto
 :toclevels: 5
 :experimental:
 :sectnumlevels: 5
