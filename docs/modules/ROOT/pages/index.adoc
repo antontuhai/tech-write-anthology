@@ -22,10 +22,10 @@ image:techwriteme-logo.png[]
 
 == Dive into our collection
 
-* [*] xref:user:user-overview.adoc[User Overview] - User experience, simplified.
-* [*] xref:admin:admin-overview.adoc[Admin Overview] - For the wizards of admin work.
+//* [*] xref:user:user-overview.adoc[User Overview] - User experience, simplified.
+//* [*] xref:admin:admin-overview.adoc[Admin Overview] - For the wizards of admin work.
 * [*] xref:api:api-overview.adoc[API Overview] - APIs decoded.
-* [*] xref:sdk:sdk-overview.adoc[SDK Overview] - Your SDK guidebook.
+//* [*] xref:sdk:sdk-overview.adoc[SDK Overview] - Your SDK guidebook.
 
 == Your contribution counts
 

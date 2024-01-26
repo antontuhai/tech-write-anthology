@@ -1,0 +1,120 @@
+= AppleTransfer API documentation
+:toc-title: On this page:
+:toc: auto
+:toclevels: 5
+:experimental:
+:sectnumlevels: 5
+:sectanchors:
+:sectlinks:
+:partnums:
+:sectnums:
+
+NOTE: This page is currently developing.
+
+Welcome to the *AppleTransfer API*, a simple and efficient way to send apples between systems. Our API provides two primary endpoints: `POST` (to send apples) and `GET` (to retrieve the status of sent apples).
+
+== Base URL
+
+The base URL for all API requests is `https://api.appletransfer.com/v1`.
+
+== Authentication
+
+All requests to AppleTransfer API require an API key. Include your key in the header of each request:
+
+[source,http]
+----
+Authorization: Bearer YOUR_API_KEY
+----
+
+== Endpoints
+
+=== Send apples (POST)
+
+This endpoint allows you to send apples to a specified system.
+
+.URL
+`/send`
+
+.Method
+`POST`
+
+.Headers
+* `Content-Type: application/json`
+* `Authorization: Bearer YOUR_API_KEY`
+
+.Request Body
+[source,json]
+----
+{
+  "recipientSystem": "string", // The unique identifier of the recipient system
+  "quantity": "integer",       // The number of apples to send
+  "variety": "string"          // The variety of apple (e.g., 'Gala', 'Fuji')
+}
+----
+
+.Success Response
+* *Code*: 200 OK
+* *Content*:
++
+[source,json]
+----
+{
+  "transactionId": "string",  // A unique identifier for the transaction
+  "status": "string"          // The status of the transaction ('sent', 'pending', etc.)
+}
+----
+
+.Error Response
+* *Code*: 400 BAD REQUEST
+* *Content*:
++
+[source,json]
+----
+{ "error": "Invalid request data" }
+----
+
+=== 2. Check status (GET)
+
+Retrieve the status of a specific apple transfer.
+
+.URL
+`/status/{transactionId}`
+
+.Method
+`GET`
+
+.Headers
+* `Authorization: Bearer YOUR_API_KEY`
+
+.URL Parameters
+* `transactionId`: The unique identifier of the apple transfer transaction.
+
+.Success Response
+* *Code*: 200 OK
+* *Content*:
++
+[source,json]
+----
+{
+  "transactionId": "string",
+  "status": "string",         // Current status of the transfer ('sent', 'in transit', 'delivered', etc.)
+  "timestamp": "datetime"     // The timestamp of the latest status update
+}
+----
+
+.Error Response
+* *Code*: 404 NOT FOUND
+* *Content*:
++
+[source,json]
+----
+{ "error": "Transaction not found" }
+----
+
+== Rate limits
+
+The AppleTransfer API is rate-limited to 100 requests per minute. If you exceed this limit, you will receive a 429 Too Many Requests error.
+
+== Support
+
+For any queries or issues, contact our support team at support@appletransfer.com.

@@ -1,3 +1,61 @@
 = API documentation
+:toc-title: On this page:
+:toc: auto
+:toclevels: 5
+:experimental:
+:sectnumlevels: 5
+:sectanchors:
+:sectlinks:
+:partnums:
 
-Test content.
+NOTE: This section is constantly developing.
+
+== Introduction
+
+Hey there, API explorers! Welcome to our go-to guide for nailing your API documentation. Whether you're a code newbie or a seasoned pro, we've got a little something for everyone. This guide is about sharing the smarts to make your API docs clear, helpful, and fun.
+
+So, what's on the menu? Let's check it out:
+
+* [*] *Introduction to API documentation*:
++
+Kick things off with a crash course in API documentation. Why it matters, who it's for, and how it can make your life easier.
+
+* [*] *Choosing your format and tools*:
++
+There's more than one way to document an API. We'll walk you through options like RESTful, GraphQL, and SOAP, as well as the tools to make the process a breeze.
+
+* [*] *Crafting top-notch API guides*:
++
+Writing docs that people want to read? Yes, please! Learn how to keep things clear and user-friendly, from explaining endpoints to showing off sample requests and responses.
+
+* [*] *Interactive docs for the win*:
++
+Bring your API docs to life with interactive elements. We're talking real-time testing and hands-on learning, making it a cinch for users to get the hang of your API.
+
+* [*] *Getting secure with authentication docs*:
++
+Nail down the must-knows for documenting API security, like authentication and authorization. Because safe APIs are happy APIs.
+
+* [*] *Error messages: The unsung heroes*:
++
+Errors happen. But with excellent documentation, you'll easily guide your users through any bumps in the road and maybe even a smile.
+
+* [*] *The art of API versioning*:
++
+Keep your users in the loop with explicit versioning and change logs. It's all about staying up-to-date and avoiding surprises.
+
+* [*] *Real talk: Examples and case studies*:
++
+Dive into real-life examples from APIs that are killing it in the documentation game. Learn from the best, then go out and join their ranks.
+
+* [*] *Best practices, worst pitfalls*:
++
+The good, the bad, and the ugly of API docs. We'll share insider tips and common traps to avoid.
+
+* [*] *Building a community of API superfans*:
++
+Turn your users into contributors with a collaborative, community-focused approach. It's all about making your API a place where everyone feels welcome and valued.
+
+== Section overview
+
+* xref:asciidoc-format/apple-transfer.adoc[]
