@@ -11,7 +11,7 @@
 
 NOTE: This page is currently developing.
 
-Welcome to the *AppleTransfer API*, a simple and efficient way to send apples between systems. Our API provides two primary endpoints: `POST` (to send apples) and `GET` (to retrieve the status of sent apples).
+include::partial$templates/snippets/apple-transfer-api.adoc[]
 
 == Base URL
 
