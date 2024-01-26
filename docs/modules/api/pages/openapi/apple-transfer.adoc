@@ -1,5 +1,4 @@
 = AppleTransfer API documentation
-:attachmentsdir: ../../modules/api/attachments
 :toc-title: On this page:
 :toc: auto
 :toclevels: 5
