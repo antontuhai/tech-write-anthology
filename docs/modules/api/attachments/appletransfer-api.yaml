@@ -2,14 +2,16 @@ openapi: 3.0.0
 info:
   title: AppleTransfer API
   version: 1.0.0
-  description: API for sending apples between systems.
+  description: A simple and efficient API for sending apples between systems, and tracking those transactions.
+
 servers:
   - url: https://api.appletransfer.com/v1
+
 paths:
   /send:
     post:
       summary: Send Apples
-      description: Send apples to a specified system.
+      description: Send a specified quantity of apples to a recipient system. You can specify the variety of apples and the recipient system identifier.
       operationId: sendApples
       requestBody:
         required: true
@@ -19,21 +21,31 @@ paths:
               $ref: '#/components/schemas/AppleSendRequest'
       responses:
         '200':
-          description: Successful response
+          description: Successfully sent apples
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AppleSendResponse'
+              examples:
+                sendSuccess:
+                  value:
+                    transactionId: "123456"
+                    status: "sent"
         '400':
           description: Invalid request data
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+              examples:
+                invalidRequest:
+                  value:
+                    error: "Invalid request data"
+
   /status/{transactionId}:
     get:
       summary: Check Status
-      description: Retrieve the status of a specific apple transfer.
+      description: Retrieve the status of a specific apple transfer using its transaction ID. You can see if the apples are sent, in transit, or delivered.
       operationId: checkStatus
       parameters:
         - name: transactionId
@@ -43,35 +55,57 @@ paths:
             type: string
       responses:
         '200':
-          description: Successful response
+          description: Successfully retrieved transaction status
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AppleStatusResponse'
+              examples:
+                statusExample:
+                  value:
+                    transactionId: "123456"
+                    status: "in transit"
+                    timestamp: "2024-01-26T10:00:00Z"
         '404':
           description: Transaction not found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+              examples:
+                notFound:
+                  value:
+                    error: "Transaction not found"
+
 components:
   schemas:
     AppleSendRequest:
       type: object
+      required:
+        - recipientSystem
+        - quantity
+        - variety
       properties:
         recipientSystem:
           type: string
+          description: Unique identifier of the recipient system.
         quantity:
           type: integer
+          description: Number of apples to send.
         variety:
           type: string
+          description: Variety of apple (e.g., 'Gala', 'Fuji').
+
     AppleSendResponse:
       type: object
       properties:
         transactionId:
           type: string
+          description: Unique identifier for the transaction.
         status:
           type: string
+          description: Status of the transaction (e.g., 'sent', 'pending').
+
     AppleStatusResponse:
       type: object
       properties:
@@ -79,18 +113,24 @@ components:
           type: string
         status:
           type: string
+          description: Current status of the transfer (e.g., 'sent', 'in transit', 'delivered').
         timestamp:
           type: string
           format: date-time
+          description: Timestamp of the latest status update.
+
     Error:
       type: object
       properties:
         error:
           type: string
-  securitySchemes:
-    ApiKeyAuth:
-      type: apiKey
-      in: header
-      name: Authorization
+          description: Description of the error.
+
+securitySchemes:
+  ApiKeyAuth:
+    type: apiKey
+    in: header
+    name: Authorization
+
 security:
   - ApiKeyAuth: []
