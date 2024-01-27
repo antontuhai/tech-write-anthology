@@ -1,3 +1,61 @@
 = SDK documentation
+:toc-title: On this page:
+:toc: auto
+:toclevels: 5
+:experimental:
+:sectnumlevels: 5
+:sectanchors:
+:sectlinks:
+:partnums:
 
-Test content.
+NOTE: This section is constantly developing.
+
+== SDK documentation overview
+
+Hey there, fellow code enthusiasts! 🚀 Welcome to our cozy corner of SDK documentation. Whether you're just dipping your toes into the world of SDKs or you're a seasoned developer, we've got a treasure trove of resources just for you. This space is all about sharing knowledge, experiences, and making SDK integration as smooth as peanut butter.
+
+So, what's cooking in our SDK kitchen? Let's dive in:
+
+* [*] *Getting started with SDKs*:
++
+Begin your journey with an intro to SDKs – what they are, why they rock, and how they can make your life a whole lot easier.
+
+* [*] *Choosing your SDK*:
++
+One size doesn't fit all, and that's okay! We'll guide you through picking the perfect SDK for your project, whether it's for sending apples or something else.
+
+* [*] *Setting up your development environment*:
++
+Ready, set, code! We'll walk you through setting up your environment so you can start using our SDKs in no time.
+
+* [*] *Interactive SDK tutorials*:
++
+Let's get hands-on! Our interactive tutorials will have you playing around with SDK features, making learning both fun and practical.
+
+* [*] *Deep dive into SDK functions*:
++
+Get up close and personal with our SDKs. We'll break down the functions, methods, and all the nitty-gritty details.
+
+* [*] *Error handling like a pro*:
++
+Bumps in the road? No problem! We'll show you how to gracefully handle errors and keep your project on track.
+
+* [*] *SDK versioning and updates*:
++
+Stay in the know with the latest updates and version changes. We're all about keeping you informed and ready for anything.
+
+* [*] *Real-world examples and case studies*:
++
+Learn from those who've walked the path. Our real-world examples and case studies will give you insights into practical SDK applications.
+
+* [*] *Tips, tricks, and best practices*:
++
+Learn from the wisdom of the community. We'll share dos and don’ts, insider tips, and best practices to elevate your SDK game.
+
+* [*] *Join the SDK fan club*:
++
+Become part of a vibrant community of SDK users and contributors. Share, learn, and grow together in an environment that celebrates collaboration and innovation.
+
+== SDKs on the spotlight
+
+* xref:sdk:asciidoc-format/sdk-apple-transfer.adoc[]
