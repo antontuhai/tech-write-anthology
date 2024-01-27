@@ -1,6 +1,6 @@
 site:
   title: Tech Write Me
-  start_page: tech-write-me:ROOT:index.adoc
+  start_page: documentation:ROOT:index.adoc
 #  url: /en
 runtime:
   fetch: true
