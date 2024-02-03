@@ -22,7 +22,7 @@ ui:
 
 asciidoc:
   extensions:
-#    - asciidoctor-plantuml
+    - asciidoctor-plantuml
     - ./supplemental-ui/extensions/swagger.extension
 #    - '@asciidoctor/tabs'
-#    - asciidoctor-kroki
+    - asciidoctor-kroki
