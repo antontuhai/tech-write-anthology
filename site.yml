@@ -21,6 +21,9 @@ ui:
   supplemental_files: ./supplemental-ui
 
 asciidoc:
+  attributes:
+    plantuml-server-url: 'https://www.plantuml.com/plantuml'
+    plantuml-fetch-diagram: true
   extensions:
     - asciidoctor-plantuml
     - ./supplemental-ui/extensions/swagger.extension
