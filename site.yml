@@ -22,8 +22,8 @@ ui:
 
 asciidoc:
   attributes:
-    plantuml-server-url: 'https://www.plantuml.com/plantuml'
-    plantuml-fetch-diagram: true
+    kroki-server-url: 'https://kroki.io'
+    kroki-fetch-diagram: true
   extensions:
     - asciidoctor-plantuml
     - ./supplemental-ui/extensions/swagger.extension
