@@ -9,7 +9,15 @@
 :partnums:
 :sectnums:
 
-NOTE: This page is currently developing.
+== API overview
+
+The *AppleTransfer API* provides a robust platform for managing the transfer of apples between different systems. A suite of HTTP endpoints enables developers to easily integrate apple transfer functionalities into their applications, supporting operations such as sending apples to specified recipient systems, checking the status of apple transfers, canceling ongoing transfers, and updating the details of existing transfers.
+
+This API is designed with simplicity and efficiency, offering a straightforward way for applications to interact with the AppleTransfer system. Requiring an API key for authentication ensures secure access to its functionalities, maintaining the integrity and confidentiality of data.
+
+With its comprehensive documentation and structured response formats, the AppleTransfer API aims to facilitate a seamless integration process for developers, promoting a user-friendly experience for both the developers integrating the API and the end-users managing apple transfers through the integrated applications.
+
+== OpenAPI specification
 
 ====
 swagger::{attachmentsdir}/appletransfer-api.yaml[]

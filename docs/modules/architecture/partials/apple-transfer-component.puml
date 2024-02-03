@@ -4,31 +4,31 @@
 
 LAYOUT_WITH_LEGEND()
 
-Container(sdk, "SDK", "Library, Python", "Enables developers to integrate AppleTransfer functionalities into their applications.")
+Container(sdk, "SDK", "Library, Python", "Facilitates asynchronous interaction with the AppleTransfer functionalities.")
 
 Container_Boundary(api, "RESTful API") {
-    Component(sendComponent, "Send component", "Handles requests to send apples.")
-    Component(statusComponent, "Status component", "Provides status checking of apple transfers.")
-    Component(cancelComponent, "Cancel component", "Allows cancellation of apple transfers.")
-    Component(updateComponent, "Update component", "Handles updates to apple transfers.")
-    Component(dbInterface, "Database Interface", "interfaces with the database for data persistence.")
-    Component(authInterface, "Authentication interface", "Manages authentication and authorization.")
+    Component(sendComponent, "Send component", "Asynchronously handles requests to send apples, allowing for non-blocking operations.")
+    Component(statusComponent, "Status component", "Provides asynchronous status checking of apple transfers, enhancing responsiveness.")
+    Component(cancelComponent, "Cancel component", "Supports cancellation of apple transfers through asynchronous requests.")
+    Component(updateComponent, "Update component", "Manages asynchronous updates to apple transfers, offering flexibility in operation modifications.")
+    Component(dbInterface, "Database interface", "Interfaces with the database for data persistence, supporting both synchronous and asynchronous interactions.")
+    Component(authInterface, "Authentication interface", "Manages authentication and authorization in a secure, asynchronous manner.")
 }
 
-Rel(sdk, sendComponent, "Uses")
-Rel(sdk, statusComponent, "Uses")
-Rel(sdk, cancelComponent, "Uses")
-Rel(sdk, updateComponent, "Uses")
+Rel(sdk, sendComponent, "Initiates asynchronous send operations")
+Rel(sdk, statusComponent, "Performs asynchronous status checks")
+Rel(sdk, cancelComponent, "Requests asynchronous cancellation")
+Rel(sdk, updateComponent, "Executes asynchronous updates")
 
-Rel(sendComponent, dbInterface, "Reads/Writes data to")
-Rel(statusComponent, dbInterface, "Reads data from")
-Rel(cancelComponent, dbInterface, "Updates data in")
-Rel(updateComponent, dbInterface, "Updates data in")
+Rel(sendComponent, dbInterface, "Reads/Writes data asynchronously")
+Rel(statusComponent, dbInterface, "Reads data asynchronously")
+Rel(cancelComponent, dbInterface, "Updates data asynchronously")
+Rel(updateComponent, dbInterface, "Updates data asynchronously")
 
-Rel(sendComponent, authInterface, "Authenticates via")
-Rel(statusComponent, authInterface, "Authenticates via")
-Rel(cancelComponent, authInterface, "Authenticates via")
-Rel(updateComponent, authInterface, "Authenticates via")
+Rel(sendComponent, authInterface, "Authenticates requests asynchronously")
+Rel(statusComponent, authInterface, "Authenticates requests asynchronously")
+Rel(cancelComponent, authInterface, "Authenticates requests asynchronously")
+Rel(updateComponent, authInterface, "Authenticates requests asynchronously")
 
 SHOW_LEGEND()
 @enduml

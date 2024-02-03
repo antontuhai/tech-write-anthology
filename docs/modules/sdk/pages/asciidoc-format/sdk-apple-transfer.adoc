@@ -9,11 +9,11 @@
 :partnums:
 :sectnums:
 
-Welcome to the *AppleTransfer API Python SDK* documentation! This SDK provides a powerful yet simple interface for integrating apple transfer functionalities into your Python applications, enabling you to easily send apples between systems, check their transfer statuses, cancel transactions, and update transaction details.
+Welcome to the *AppleTransfer API Python SDK* documentation! This SDK is a comprehensive toolkit for integrating AppleTransfer's apple transfer functionalities into Python-based applications. Leverage this SDK to seamlessly send apples, manage apple transfers, check statuses, cancel transactions, and update transaction details.
 
 == Installation
 
-First, ensure you have the `requests` library installed in your Python environment. If not, you can easily install it using pip:
+Ensure the `requests` library is installed in your Python environment. Install it via pip if necessary:
 
 [source,bash]
 ----
@@ -22,16 +22,16 @@ pip install requests
 
 == Getting started
 
-The SDK offers two primary classes: `AppleTransferClient` for interacting with the AppleTransfer API and `AppleTransaction` for managing individual transactions.
+The SDK introduces two pivotal classes: `AppleTransferClient`, the gateway to the AppleTransfer API, and `AppleTransaction`, which facilitates detailed transaction management.
 
 [initialize-client]
 === Initializing the client
 
-Start by creating an instance of the `AppleTransferClient`:
+Instantiate `AppleTransferClient` with your API key:
 
 [source,python]
 ----
-from apple_transfer import AppleTransferClient
+from apple_transfer_sdk import AppleTransferClient
 
 client = AppleTransferClient(api_key="your_api_key_here")
 ----
@@ -44,32 +44,26 @@ include::partial$sdk-code-sample.adoc[]
 
 === AppleTransferClient
 
-The SDK's main interface provides methods to send apples and check transaction statuses.
+This class is your primary interface to the AppleTransfer API, offering methods to initiate and track apple transfers.
 
-[apple-transfer-client-methods]
-==== Methods
-
-* `send_apples(recipient_system, quantity, variety)`: Sends apples to a specified system and returns an `AppleTransaction` object.
-* `check_status(transaction_id)`: Checks the status of a specific apple transfer transaction.
-* `_post(endpoint, data)`: Internal method to make POST requests to the API.
-* `_get(endpoint)`: Internal method to make GET requests to the API.
+.Methods
+* `send_apples(recipient_system, quantity, variety)`: Initiates an apple transfer, returning an `AppleTransaction` object for further management.
+* `check_status(transaction_id)`: Retrieves the current status of an apple transfer.
 
 === AppleTransaction
 
-Represents a specific transaction, allowing you to query its status, cancel it, or update its details.
+This class represents an individual apple transfer, providing capabilities to query its status, cancel it, or update its details.
 
-[apple-transaction-methods]
-==== Methods
-
-* `status()`: Retrieves the transaction's current status.
-* `cancel()`: Cancels the transaction.
-* `update(quantity=None, variety=None)`: Updates the transaction details.
+.Methods
+* `status()`: Returns the transaction's current status.
+* `cancel()`: Cancels the ongoing transaction.
+* `update(quantity=None, variety=None)`: Modifies the transaction's details.
 
 == Usage examples
 
 === Sending apples
 
-To send apples, use the `send_apples` method. This method returns an `AppleTransaction` object, which you can use to interact further with the transaction:
+To send apples, call `send_apples`, which yields an `AppleTransaction` for subsequent interactions:
 
 [source,python]
 ----
@@ -79,7 +73,7 @@ print(transaction.status())
 
 === Checking transaction status
 
-You can check the status of a transaction directly from the `AppleTransaction` object:
+Query a transaction's status through the `AppleTransaction` instance:
 
 [source,python]
 ----
@@ -88,7 +82,7 @@ print(transaction.status())
 
 === Cancelling a transaction
 
-To cancel a transaction:
+Cancel a transaction using its `AppleTransaction` instance:
 
 [source,python]
 ----
@@ -98,7 +92,7 @@ print(response)
 
 === Updating a transaction
 
-To update the details of a transaction:
+Modify a transaction's details:
 
 [source,python]
 ----
@@ -108,12 +102,12 @@ print(response)
 
 == Best practices
 
-While the SDK is designed to be as straightforward as possible, here are a few tips to ensure you get the best out of it:
+To optimize your use of the SDK, consider the following:
 
-* Always handle exceptions, especially for network-related errors.
-* Check the API's rate limits and implement retry logic as necessary.
-* Secure your API key, and do not hard-code it into your applications.
+* Implement exception handling, particularly for operations that depend on network connectivity.
+* Be mindful of the API's rate limits to design efficient retry mechanisms.
+* Secure your API key diligently; avoid embedding it directly in your source code.
 
 == Conclusion
 
-Thank you for choosing the AppleTransfer API Python SDK. We're excited to see the incredible applications you'll build with it. Happy coding!
+The AppleTransfer API Python SDK is engineered to empower developers with robust tools for building sophisticated apple transfer solutions. We eagerly anticipate the innovative applications you will create. Happy coding!

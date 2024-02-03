@@ -6,34 +6,14 @@
 :sectnumlevels: 5
 :icons: font
 :sectanchors:
-:sectnums:
 
 == Introduction
 
-The component architecture of the AppleTransfer system details the internal structure and interactions of components within the RESTful API, along with how the external SDK interfaces with these components. This document provides insights into the modular design that supports the apple transfer functionalities.
+The *AppleTransfer* system leverages a modern, component-based architecture to facilitate the efficient and secure transfer of apples between systems. This architecture is designed to support asynchronous operations, enhancing the system's scalability and responsiveness.
 
 == Component overview
 
-The AppleTransfer system's RESTful API is composed of several key components, each responsible for a specific part of the apple transfer process. Together with the AppleTransfer SDK, these components form the backbone of the system's operations.
-
-- *AppleTransfer SDK*: A Python library that offers developers an easy way to incorporate apple transfer functionalities into their applications, interacting directly with the RESTful API's components.
-
-[restful-api-components]
-=== RESTful API components
-
-The RESTful API, serving as the core of the AppleTransfer system, includes the following components:
-
-- *Send component*: Manages the initiation of apple transfers, handling requests to send apples to specified recipients.
-
-- *Status component*: Provides functionalities for checking the status of apple transfers, allowing users to track the progress of their transactions.
-
-- *Cancel component*: Enables users to cancel ongoing apple transfers, ensuring flexibility in managing apple transactions.
-
-- *Update component*: Facilitates updates to existing apple transfers, such as modifying the quantity or variety of apples being sent.
-
-- *Database interface*: Acts as a mediator between the API components and the system's database, handling all data storage and retrieval operations.
-
-- *Authentication interface*: Oversees the authentication and authorization processes, securing access to the system's functionalities.
+At the heart of the AppleTransfer system lies its RESTful API, which comprises several key components, each dedicated to a specific function within the apple transfer process. The external SDK interfaces with these components to provide a seamless integration experience for developers.
 
 .Component architecture diagram
 [plantuml, architecture-component-diagram, png]
@@ -41,10 +21,29 @@ The RESTful API, serving as the core of the AppleTransfer system, includes the f
 include::architecture:partial$apple-transfer-component.puml[]
 ----
 
+* *AppleTransfer SDK*: A Python library designed to enable developers to easily integrate apple transfer functionalities into their applications. The SDK interacts asynchronously with the RESTful API, ensuring non-blocking operations.
+
+[restful-api-components]
+=== RESTful API components
+
+The RESTful API forms the core operational layer of the AppleTransfer system, consisting of:
+
+- *Send component*: Asynchronously handles apple transfer initiation requests, allowing for efficient processing and response.
+
+- *Status component*: Offers asynchronous status checking for apple transfers, enabling real-time updates on transfer progress.
+
+- *Cancel component*: Provides the ability to asynchronously cancel ongoing apple transfers, adding flexibility and control over transactions.
+
+- *Update component*: Supports asynchronous updates to apple transfers, allowing modifications such as quantity and variety adjustments.
+
+- *Database interface*: Serves as the conduit for all data interactions between the API components and the database, facilitating both synchronous and asynchronous data operations.
+
+- *Authentication interface*: Manages secure access to the system, ensuring that all requests are authenticated and authorized appropriately.
+
 == Interactions between components
 
-The AppleTransfer SDK communicates directly with the RESTful API components, utilizing their functionalities to perform operations related to apple transfers. Each component, in turn, interacts with the Database Interface for data persistence and the Authentication Interface to ensure secure access to the system's features.
+Interactions within the AppleTransfer system are primarily asynchronous, enhancing the system's ability to handle multiple requests simultaneously without blocking. The SDK communicates with each RESTful API component, leveraging their functionalities to execute apple transfer operations. These components, in turn, interface with the Database for persistence and the Authentication service for secure access.
 
 == Conclusion
 
-The component architecture of the AppleTransfer system illustrates a well-organized, modular approach to building a scalable and secure application. By clearly delineating responsibilities among the components, the system achieves high cohesion and low coupling, facilitating ease of maintenance and future enhancements. This overview provides a comprehensive understanding of how the AppleTransfer system's components work together to deliver a robust solution for managing apple transfers.
+The component architecture of the AppleTransfer system demonstrates a commitment to modern, scalable application design principles. By employing asynchronous communication and a clear separation of concerns, the architecture ensures high performance, security, and ease of integration. This documentation offers a detailed view of the system's internal workings, highlighting the collaborative function of its components in facilitating apple transfer processes.

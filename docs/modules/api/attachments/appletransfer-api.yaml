@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: AppleTransfer API
   version: 1.0.0
-  description: This API allows for sending apples between systems, checking the status of these transactions, cancelling transfers, and updating transfer details.
+  description: This API facilitates sending apples between systems, checking the status of these transactions, canceling transfers, and updating transfer details.
 
 servers:
   - url: https://api.appletransfer.com/v1
@@ -59,7 +59,7 @@ paths:
             type: string
       responses:
         '200':
-          description: Transfer cancelled successfully.
+          description: Transfer canceled successfully.
           content:
             application/json:
               schema:
@@ -101,23 +101,23 @@ components:
       properties:
         recipientSystem:
           type: string
-          description: The unique identifier of the recipient system.
+          description: Unique identifier of the recipient system.
         quantity:
           type: integer
-          description: The number of apples to send.
+          description: Number of apples to send.
         variety:
           type: string
-          description: The variety of apple (e.g., 'Gala', 'Fuji').
+          description: Variety of apple (e.g., 'Gala', 'Fuji').
 
     SendApplesResponse:
       type: object
       properties:
         transactionId:
           type: string
-          description: A unique identifier for the transaction.
+          description: Unique identifier for the transaction.
         status:
           type: string
-          description: The status of the transaction (e.g., 'sent').
+          description: Status of the transaction (e.g., 'sent').
 
     CheckStatusResponse:
       type: object
@@ -126,7 +126,7 @@ components:
           type: string
         status:
           type: string
-          description: The current status of the transfer (e.g., 'in transit').
+          description: Current status of the transfer (e.g., 'in transit').
         timestamp:
           type: string
           format: date-time
@@ -144,10 +144,10 @@ components:
       properties:
         quantity:
           type: integer
-          description: (Optional) The new number of apples to send.
+          description: (Optional) New number of apples to send.
         variety:
           type: string
-          description: (Optional) The new variety of apple.
+          description: (Optional) New variety of apple.
 
     UpdateTransferResponse:
       type: object
@@ -161,7 +161,7 @@ components:
       properties:
         error:
           type: string
-          description: Description of the error encountered.
+          description: Description of the encountered error.
 
 securitySchemes:
   ApiKeyAuth:

@@ -1,22 +1,43 @@
-@startuml AppleTransfer SDK Class Diagram
+@startuml AppleTransfer SDK class diagram
 
 class AppleTransferClient {
     +apiKey: String
     +baseUrl: String
-    +send_apples(recipientSystem, quantity, variety): AppleTransaction
-    +check_status(transactionId): Status
-    +cancel_transfer(transactionId): Response
-    +update_transfer(transactionId, quantity, variety): Response
+    +async send_apples(recipientSystem: String, quantity: Integer, variety: String): Promise<AppleTransaction>
+    +async check_status(transactionId: String): Promise<Status>
+    +async cancel_transfer(transactionId: String): Promise<Response>
+    +async update_transfer(transactionId: String, quantity?: Integer, variety?: String): Promise<Response>
 }
 
 class AppleTransaction {
     -client: AppleTransferClient
     -transactionId: String
-    +status(): Status
-    +cancel(): Response
-    +update(quantity, variety): Response
+    +async status(): Promise<Status>
+    +async cancel(): Promise<Response>
+    +async update(quantity?: Integer, variety?: String): Promise<Response>
 }
 
 AppleTransferClient --> AppleTransaction : creates
+
+note right of AppleTransferClient : Asynchronous methods\nfor non-blocking operations
+
+class Status {
+    +status: String
+    +timestamp?: DateTime
+}
+
+class Response {
+    +success: Boolean
+    +message: String
+    +error?: ErrorDetails
+}
+
+class ErrorDetails {
+    +code: Integer
+    +message: String
+}
+
+AppleTransaction --> Status : returns
+AppleTransaction --> Response : returns
 
 @enduml
