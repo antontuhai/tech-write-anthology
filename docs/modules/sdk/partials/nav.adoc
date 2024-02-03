@@ -1,2 +1,3 @@
-* xref:sdk:sdk-overview.adoc[]
+//* xref:sdk:sdk-overview.adoc[]
+* SDK documentation
 ** xref:sdk:asciidoc-format/sdk-apple-transfer.adoc[]

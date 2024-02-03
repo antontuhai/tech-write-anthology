@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: AppleTransfer API
   version: 1.0.0
-  description: A simple and efficient API for sending apples between systems, and tracking those transactions.
+  description: This API allows for sending apples between systems, checking the status of these transactions, cancelling transfers, and updating transfer details.
 
 servers:
   - url: https://api.appletransfer.com/v1
@@ -10,42 +10,27 @@ servers:
 paths:
   /send:
     post:
-      summary: Send Apples
-      description: Send a specified quantity of apples to a recipient system. You can specify the variety of apples and the recipient system identifier.
+      summary: Send apples
+      description: Initiates the transfer of apples to a specified recipient system.
       operationId: sendApples
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AppleSendRequest'
+              $ref: '#/components/schemas/SendApplesRequest'
       responses:
         '200':
-          description: Successfully sent apples
+          description: Successfully sent apples.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppleSendResponse'
-              examples:
-                sendSuccess:
-                  value:
-                    transactionId: "123456"
-                    status: "sent"
-        '400':
-          description: Invalid request data
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                invalidRequest:
-                  value:
-                    error: "Invalid request data"
+                $ref: '#/components/schemas/SendApplesResponse'
 
   /status/{transactionId}:
     get:
-      summary: Check Status
-      description: Retrieve the status of a specific apple transfer using its transaction ID. You can see if the apples are sent, in transit, or delivered.
+      summary: Check status
+      description: Retrieves the current status of an apple transfer using the transaction ID.
       operationId: checkStatus
       parameters:
         - name: transactionId
@@ -55,31 +40,59 @@ paths:
             type: string
       responses:
         '200':
-          description: Successfully retrieved transaction status
+          description: Successfully retrieved transaction status.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppleStatusResponse'
-              examples:
-                statusExample:
-                  value:
-                    transactionId: "123456"
-                    status: "in transit"
-                    timestamp: "2024-01-26T10:00:00Z"
-        '404':
-          description: Transaction not found
+                $ref: '#/components/schemas/CheckStatusResponse'
+
+  /cancel/{transactionId}:
+    post:
+      summary: Cancel transfer
+      description: Cancels an ongoing apple transfer.
+      operationId: cancelTransfer
+      parameters:
+        - name: transactionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Transfer cancelled successfully.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                notFound:
-                  value:
-                    error: "Transaction not found"
+                $ref: '#/components/schemas/CancelTransferResponse'
+
+  /update/{transactionId}:
+    put:
+      summary: Update transfer
+      description: Modifies the details of an existing apple transfer.
+      operationId: updateTransfer
+      parameters:
+        - name: transactionId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTransferRequest'
+      responses:
+        '200':
+          description: Transfer updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateTransferResponse'
 
 components:
   schemas:
-    AppleSendRequest:
+    SendApplesRequest:
       type: object
       required:
         - recipientSystem
@@ -88,43 +101,67 @@ components:
       properties:
         recipientSystem:
           type: string
-          description: Unique identifier of the recipient system.
+          description: The unique identifier of the recipient system.
         quantity:
           type: integer
-          description: Number of apples to send.
+          description: The number of apples to send.
         variety:
           type: string
-          description: Variety of apple (e.g., 'Gala', 'Fuji').
+          description: The variety of apple (e.g., 'Gala', 'Fuji').
 
-    AppleSendResponse:
+    SendApplesResponse:
       type: object
       properties:
         transactionId:
           type: string
-          description: Unique identifier for the transaction.
+          description: A unique identifier for the transaction.
         status:
           type: string
-          description: Status of the transaction (e.g., 'sent', 'pending').
+          description: The status of the transaction (e.g., 'sent').
 
-    AppleStatusResponse:
+    CheckStatusResponse:
       type: object
       properties:
         transactionId:
           type: string
         status:
           type: string
-          description: Current status of the transfer (e.g., 'sent', 'in transit', 'delivered').
+          description: The current status of the transfer (e.g., 'in transit').
         timestamp:
           type: string
           format: date-time
           description: Timestamp of the latest status update.
+
+    CancelTransferResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Confirmation message of the cancellation.
+
+    UpdateTransferRequest:
+      type: object
+      properties:
+        quantity:
+          type: integer
+          description: (Optional) The new number of apples to send.
+        variety:
+          type: string
+          description: (Optional) The new variety of apple.
+
+    UpdateTransferResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Confirmation message of the update.
 
     Error:
       type: object
       properties:
         error:
           type: string
-          description: Description of the error.
+          description: Description of the error encountered.
 
 securitySchemes:
   ApiKeyAuth:

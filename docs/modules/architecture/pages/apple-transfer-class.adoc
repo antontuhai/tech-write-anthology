@@ -1,0 +1,58 @@
+= AppleTransfer SDK class architecture
+:toc:
+:toc-title: On this page
+:toclevels: 4
+:sectnums:
+:sectnumlevels: 5
+:icons: font
+:sectanchors:
+:sectnums:
+
+== Introduction
+
+This document outlines the class architecture of the AppleTransfer SDK, detailing the structure and relationships of classes designed to facilitate interaction with the AppleTransfer system. The SDK provides a simplified, object-oriented interface for developers, enabling seamless integration of apple transfer functionalities into third-party applications.
+
+== Class overview
+
+The AppleTransfer SDK comprises two primary classes: `AppleTransferClient` and `AppleTransaction`. Together, these classes offer a comprehensive API for initiating, managing, and tracking apple transfers.
+
+.Class architecture diagram
+[plantuml, architecture-class-diagram, png]
+----
+include::architecture:partial$apple-transfer-class.puml[]
+----
+
+=== AppleTransferClient class
+
+Represents the main entry point for SDK users, encapsulating the methods necessary to interact with the AppleTransfer API.
+
+- *Attributes*:
+- `apiKey`: The user's API key required for authentication with the AppleTransfer system.
+- `baseUrl`: The base URL of the AppleTransfer API.
+
+- *Methods*:
+- `send_apples(recipientSystem, quantity, variety)`: Initiates an apple transfer.
+- `check_status(transactionId)`: Retrieves the status of a specified apple transfer.
+- `cancel_transfer(transactionId)`: Cancels an ongoing apple transfer.
+- `update_transfer(transactionId, quantity, variety)`: Updates the details of an existing apple transfer.
+
+=== AppleTransaction class
+
+Encapsulates a specific apple transfer transaction, providing methods to query its status, cancel it, or update its details.
+
+- *Attributes*:
+- `client`: A reference to the `AppleTransferClient` instance used to create this transaction.
+- `transactionId`: The unique identifier of the apple transfer transaction.
+
+- *Methods*:
+- `status()`: Returns the current status of the apple transfer.
+- `cancel()`: Cancels the apple transfer.
+- `update(quantity, variety)`: Updates the quantity or variety of apples being transferred.
+
+== Relationships
+
+The `AppleTransferClient` class is responsible for creating instances of the `AppleTransaction` class. This relationship allows transactions to be tightly integrated with the client instance that initiated them, ensuring that actions on transactions can be easily managed and tracked.
+
+== Conclusion
+
+The class architecture of the AppleTransfer SDK is designed to offer a straightforward, object-oriented interface to the AppleTransfer system's functionalities. By abstracting the complexities of direct API calls into intuitive class methods, the SDK simplifies the process of integrating apple transfer capabilities into various software solutions. This overview provides a clear understanding of how the SDK's classes and methods are structured to support developers in implementing apple transfer features.

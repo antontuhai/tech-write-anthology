@@ -1,5 +1,5 @@
 = AppleTransfer API Python SDK
-:toc-title: On this page:
+:toc-title: On this page
 :toc: auto
 :toclevels: 5
 :experimental:
@@ -9,109 +9,111 @@
 :partnums:
 :sectnums:
 
-The *_AppleTransfer API Python SDK_* provides a straightforward interface to interact with the AppleTransfer API. This SDK simplifies sending apples between systems and checking the status of these transactions.
+Welcome to the *AppleTransfer API Python SDK* documentation! This SDK provides a powerful yet simple interface for integrating apple transfer functionalities into your Python applications, enabling you to easily send apples between systems, check their transfer statuses, cancel transactions, and update transaction details.
 
 == Installation
 
-To utilize the SDK, you must first install the necessary 'requests' library.
+First, ensure you have the `requests` library installed in your Python environment. If not, you can easily install it using pip:
 
 [source,bash]
 ----
 pip install requests
 ----
 
-== SDK overview
+== Getting started
 
-The SDK provides an `AppleTransferClient` class with methods to access API endpoints.
+The SDK offers two primary classes: `AppleTransferClient` for interacting with the AppleTransfer API and `AppleTransaction` for managing individual transactions.
 
-.SDK code sample
+[initialize-client]
+=== Initializing the client
+
+Start by creating an instance of the `AppleTransferClient`:
+
 [source,python]
 ----
-import requests
+from apple_transfer import AppleTransferClient
 
-class AppleTransferClient:
-    def __init__(self, api_key):
-        """Initializes the AppleTransferClient.
-
-        Args:
-            api_key (str): Your API key for accessing the AppleTransfer API.
-        """
-        self.api_key = api_key
-        self.base_url = "https://api.appletransfer.com/v1"
-
-    def send_apples(self, recipient_system, quantity, variety):
-        """Send apples to a specified system.
-
-        Args:
-            recipient_system (str): Unique identifier of the recipient system.
-            quantity (int): Number of apples to send.
-            variety (str): Variety of apple, e.g., 'Gala', 'Fuji'.
-
-        Returns:
-            dict: Response from the API with transaction details.
-        """
-        # ... Method implementation ...
-
-    def check_status(self, transaction_id):
-        """Check the status of a specific apple transfer.
-
-        Args:
-            transaction_id (str): Unique identifier for the apple transfer transaction.
-
-        Returns:
-            dict: Response from the API with the current status of the transaction.
-        """
-        # ... Method implementation ...
+client = AppleTransferClient(api_key="your_api_key_here")
 ----
 
-== Usage
+== SDK overview
+
+=== SDK code sample
+
+include::partial$sdk-code-sample.adoc[]
+
+=== AppleTransferClient
+
+The SDK's main interface provides methods to send apples and check transaction statuses.
+
+[apple-transfer-client-methods]
+==== Methods
+
+* `send_apples(recipient_system, quantity, variety)`: Sends apples to a specified system and returns an `AppleTransaction` object.
+* `check_status(transaction_id)`: Checks the status of a specific apple transfer transaction.
+* `_post(endpoint, data)`: Internal method to make POST requests to the API.
+* `_get(endpoint)`: Internal method to make GET requests to the API.
+
+=== AppleTransaction
+
+Represents a specific transaction, allowing you to query its status, cancel it, or update its details.
+
+[apple-transaction-methods]
+==== Methods
+
+* `status()`: Retrieves the transaction's current status.
+* `cancel()`: Cancels the transaction.
+* `update(quantity=None, variety=None)`: Updates the transaction details.
+
+== Usage examples
 
 === Sending apples
 
-To send apples, use the `send_apples` method of the `AppleTransferClient`.
+To send apples, use the `send_apples` method. This method returns an `AppleTransaction` object, which you can use to interact further with the transaction:
 
 [source,python]
 ----
-api_key = "YOUR_API_KEY"
-client = AppleTransferClient(api_key)
-
-# Send 10 Gala apples to the recipient system 'recipient123'
-send_response = client.send_apples("recipient123", 10, "Gala")
-print("Send Response:", send_response)
+transaction = client.send_apples("recipient123", 10, "Gala")
+print(transaction.status())
 ----
 
-==== Parameters
+=== Checking transaction status
 
-* `recipient_system` (str): The unique identifier of the recipient system.
-* `quantity` (int): The number of apples to send.
-* `variety` (str): The variety of apple.
-
-==== Return value
-
-A dictionary with transaction details including transaction ID and status.
-
-=== Checking status
-
-To check the status of sent transaction, use the `check_status` method.
+You can check the status of a transaction directly from the `AppleTransaction` object:
 
 [source,python]
 ----
-api_key = "YOUR_API_KEY"
-client = AppleTransferClient(api_key)
-
-# Assuming you have a transaction ID 'txn_12345'
-status_response = client.check_status("txn_12345")
-print("Status Response:", status_response)
+print(transaction.status())
 ----
 
-==== Parameters
+=== Cancelling a transaction
 
-* `transaction_id` (str): The unique identifier of the apple transfer transaction.
+To cancel a transaction:
 
-==== Return value
+[source,python]
+----
+response = transaction.cancel()
+print(response)
+----
 
-A dictionary containing the status of the transaction, including its current state and a timestamp.
+=== Updating a transaction
 
-== Note
+To update the details of a transaction:
 
-This SDK is a basic example designed for clarity and ease of use. In a real-world scenario, consider adding more robust error handling, logging, and other features like rate limiting and retry mechanisms.
+[source,python]
+----
+response = transaction.update(quantity=15, variety="Honeycrisp")
+print(response)
+----
+
+== Best practices
+
+While the SDK is designed to be as straightforward as possible, here are a few tips to ensure you get the best out of it:
+
+* Always handle exceptions, especially for network-related errors.
+* Check the API's rate limits and implement retry logic as necessary.
+* Secure your API key, and do not hard-code it into your applications.
+
+== Conclusion
+
+Thank you for choosing the AppleTransfer API Python SDK. We're excited to see the incredible applications you'll build with it. Happy coding!

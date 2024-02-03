@@ -1,0 +1,51 @@
+= AppleTransfer context architecture
+:toc:
+:toc-title: On this page
+:toclevels: 4
+:sectnums:
+:sectnumlevels: 5
+:icons: font
+:sectanchors:
+:sectnums:
+
+== Introduction
+
+The *AppleTransfer* system is designed to facilitate the sending and tracking of apple transfers between systems. This document provides an overview of the system's architecture, highlighting how users interact with the system and how it integrates with external services.
+
+== System context
+
+The AppleTransfer system operates within a broader ecosystem, interacting with users and external services to provide a comprehensive solution for apple transfer management. The key components of this ecosystem include:
+
+- *Users*: Individuals who use the AppleTransfer system. These can be customers looking to send apples or administrators managing the system.
+
+- *AppleTransfer system*: The core system that users interact with. It manages the initiation, tracking, and updating of apple transfers.
+
+- *Payment gateway*: An external service used by the AppleTransfer system for processing transactions related to the apple transfers.
+
+- *Notification service*: An external service that the AppleTransfer system uses to send notifications to users. These notifications can include updates on transfer status, confirmations, and alerts.
+
+.AppleTransfer architecture context diagram
+[plantuml]
+----
+include::architecture:partial$apple-transfer-context.puml[]
+----
+
+== User interactions
+
+Users interact with the AppleTransfer system primarily through a user interface (not detailed in the context diagram). This interface allows them to:
+
+- Initiate new apple transfers.
+- Check the status of ongoing or completed transfers.
+- Receive notifications about their transfers.
+
+== System integrations
+
+The AppleTransfer system integrates with external services to enhance its functionality:
+
+- *Payment processing*: The system uses a _Payment Gateway_ to handle financial transactions securely. This integration ensures that users can make payments related to their apple transfers smoothly and securely.
+
+- *Notifications*: To keep users informed about the status of their transfers and any relevant updates, the system integrates with a _Notification Service_. This service allows for the automated sending of email or SMS notifications.
+
+== Conclusion
+
+The AppleTransfer system provides a robust solution for managing apple transfers. Through its interactions with users and external services, it offers a seamless experience for sending apples, tracking transfers, and handling transactions. This architecture overview outlines the system's context, highlighting the essential components and their interactions within the broader ecosystem.

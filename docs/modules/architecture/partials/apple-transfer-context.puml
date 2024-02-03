@@ -1,0 +1,17 @@
+@startuml AppleTransfer Context Diagram
+!define C4Context
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person(user, "User", "A user of the AppleTransfer system, can be a customer or an admin.")
+System_Ext(paymentGateway, "Payment gateway", "External payment service for processing transactions.")
+System_Ext(notificationService, "Notification service", "Manages sending notifications to users.")
+System(appleTransfer, "AppleTransfer system", "Manages sending and tracking of apple transfers.")
+
+Rel(user, appleTransfer, "Uses")
+Rel(appleTransfer, paymentGateway, "Uses for transaction processing")
+Rel(appleTransfer, notificationService, "Uses for sending notifications")
+
+SHOW_LEGEND()
+@enduml

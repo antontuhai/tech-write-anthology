@@ -1,0 +1,34 @@
+@startuml AppleTransfer Application Component Diagram
+!define C4Component
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+
+Container(sdk, "SDK", "Library, Python", "Enables developers to integrate AppleTransfer functionalities into their applications.")
+
+Container_Boundary(api, "RESTful API") {
+    Component(sendComponent, "Send component", "Handles requests to send apples.")
+    Component(statusComponent, "Status component", "Provides status checking of apple transfers.")
+    Component(cancelComponent, "Cancel component", "Allows cancellation of apple transfers.")
+    Component(updateComponent, "Update component", "Handles updates to apple transfers.")
+    Component(dbInterface, "Database Interface", "interfaces with the database for data persistence.")
+    Component(authInterface, "Authentication interface", "Manages authentication and authorization.")
+}
+
+Rel(sdk, sendComponent, "Uses")
+Rel(sdk, statusComponent, "Uses")
+Rel(sdk, cancelComponent, "Uses")
+Rel(sdk, updateComponent, "Uses")
+
+Rel(sendComponent, dbInterface, "Reads/Writes data to")
+Rel(statusComponent, dbInterface, "Reads data from")
+Rel(cancelComponent, dbInterface, "Updates data in")
+Rel(updateComponent, dbInterface, "Updates data in")
+
+Rel(sendComponent, authInterface, "Authenticates via")
+Rel(statusComponent, authInterface, "Authenticates via")
+Rel(cancelComponent, authInterface, "Authenticates via")
+Rel(updateComponent, authInterface, "Authenticates via")
+
+SHOW_LEGEND()
+@enduml

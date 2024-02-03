@@ -1,0 +1,28 @@
+@startuml AppleTransfer Container Diagram
+!define C4Container
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person(user, "User", "End-users or admins of the AppleTransfer system.")
+Person(developer, "Developer", "Developers using the AppleTransfer SDK for integration into third-party systems.")
+
+Container(sdk, "AppleTransfer SDK", "Library, Python", "Allows developers to interact with the AppleTransfer API in their applications.")
+Container(webApp, "Web application", "JavaScript/React", "Provides the user interface for AppleTransfer functionalities.")
+Container(restApi, "RESTful API", "Handles business logic, data processing, and external integrations.")
+Container(db, "Database", "Stores user and apple transfer data.")
+Container(authService, "Authentication service", "External", "Manages user authentication and authorization.")
+Container(paymentService, "Payment service", "External", "Processes payment transactions.")
+Container(notificationService, "Notification service", "External", "Sends notifications to users.")
+
+Rel(user, webApp, "Uses")
+Rel(developer, sdk, "Utilizes")
+Rel(sdk, restApi, "Communicates via API calls")
+Rel(webApp, restApi, "Communicates")
+Rel(restApi, db, "Reads/Writes data to")
+Rel(restApi, authService, "Verifies user identity with")
+Rel(restApi, paymentService, "Processes payments using")
+Rel(restApi, notificationService, "Sends notifications via")
+
+SHOW_LEGEND()
+@enduml

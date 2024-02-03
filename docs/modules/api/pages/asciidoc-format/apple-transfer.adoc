@@ -9,112 +9,208 @@
 :partnums:
 :sectnums:
 
-NOTE: This page is currently developing.
+Welcome to the *AppleTransfer API documentation*! We're here to guide you through integrating our apple transfer services into your applications. From sending apples across systems to managing your apple transactions, we've got everything you need to start.
 
-include::partial$templates/snippets/apple-transfer-api.adoc[]
+== Overview
 
-== Base URL
-
-The base URL for all API requests is `https://api.appletransfer.com/v1`.
+The *AppleTransfer API* offers a suite of HTTP endpoints for seamlessly managing apple transfers. Our API supports sending apples, checking their transfer status, canceling transfers, and updating transfer details.
 
 == Authentication
 
-All requests to AppleTransfer API require an API key. Include your key in the header of each request:
+All requests to the AppleTransfer API must include a valid API key in the header:
 
 [source,http]
 ----
 Authorization: Bearer YOUR_API_KEY
 ----
 
+== Base URL
+
+The root URL for all API requests is `https://api.appletransfer.com/v1`.
+
 == Endpoints
 
-=== Send apples (POST)
+=== Send apples (`POST`)
 
-This endpoint allows you to send apples to a specified system.
+Initiates the transfer of apples to a specified recipient system.
 
-.URL
-`/send`
-
-.Method
-`POST`
+* Endpoint: `/send`
+* Method: `POST`
 
 .Headers
 * `Content-Type: application/json`
 * `Authorization: Bearer YOUR_API_KEY`
 
-.Request Body
-[source,json]
+.Request body parameters
+[cols="1,1,1,3",options="header"]
+|===
+| Name             | Type     | Required/Optional | Description
+| `recipientSystem` | string   | Required          | The unique identifier of the recipient system.
+| `quantity`        | integer  | Required          | The number of apples to send.
+| `variety`         | string   | Required          | The variety of apple (e.g., 'Gala', 'Fuji').
+|===
+
+.HTTP-request example
+[source,http]
 ----
+POST /send HTTP/1.1
+Host: api.appletransfer.com
+Content-Type: application/json
+Authorization: Bearer YOUR_API_KEY
+
 {
-  "recipientSystem": "string", // The unique identifier of the recipient system
-  "quantity": "integer",       // The number of apples to send
-  "variety": "string"          // The variety of apple (e.g., 'Gala', 'Fuji')
+  "recipientSystem": "system123",
+  "quantity": 20,
+  "variety": "Gala"
 }
 ----
 
-.Success Response
-* *Code*: 200 OK
-* *Content*:
-+
-[source,json]
-----
-{
-  "transactionId": "string",  // A unique identifier for the transaction
-  "status": "string"          // The status of the transaction ('sent', 'pending', etc.)
-}
-----
-
-.Error Response
-* *Code*: 400 BAD REQUEST
-* *Content*:
-+
-[source,json]
-----
-{ "error": "Invalid request data" }
-----
-
-=== 2. Check status (GET)
-
-Retrieve the status of a specific apple transfer.
-
-.URL
-`/status/{transactionId}`
-
-.Method
-`GET`
-
-.Headers
-* `Authorization: Bearer YOUR_API_KEY`
-
-.URL Parameters
-* `transactionId`: The unique identifier of the apple transfer transaction.
-
-.Success Response
-* *Code*: 200 OK
+.Success response
+* *Code*: `200 OK`
 * *Content*:
 +
 [source,json]
 ----
 {
   "transactionId": "string",
-  "status": "string",         // Current status of the transfer ('sent', 'in transit', 'delivered', etc.)
-  "timestamp": "datetime"     // The timestamp of the latest status update
+  "status": "sent"
 }
 ----
 
-.Error Response
-* *Code*: 404 NOT FOUND
+=== Check status (`GET`)
+
+Retrieves the current status of an apple transfer.
+
+* Endpoint: `/status/{transactionId}`
+* Method: `GET`
+
+.Headers
+* `Authorization: Bearer YOUR_API_KEY`
+
+.URL parameters
+[cols="1,1,1,3",options="header"]
+|===
+| Name           | Type   | Required/Optional | Description
+| `transactionId`  | string | Required          | The unique identifier of the apple transfer transaction.
+|===
+
+.HTTP-request example
+[source,http]
+----
+GET /status/txn_12345 HTTP/1.1
+Host: api.appletransfer.com
+Authorization: Bearer YOUR_API_KEY
+----
+
+.Success response
+* *Code*: `200 OK`
 * *Content*:
 +
 [source,json]
 ----
-{ "error": "Transaction not found" }
+{
+  "transactionId": "txn_12345",
+  "status": "in transit",
+  "timestamp": "2023-10-04T12:00:00Z"
+}
 ----
 
-== Rate limits
+=== Cancel transfer (`POST`)
 
-The AppleTransfer API is rate-limited to 100 requests per minute. If you exceed this limit, you will receive a 429 Too Many Requests error.
+Cancels an ongoing apple transfer.
 
-== Support
+* Endpoint: `/cancel/{transactionId}`
+* Method: `POST`
 
-For any queries or issues, contact our support team at support@appletransfer.com.
+.Headers
+* `Authorization: Bearer YOUR_API_KEY`
+
+.URL parameters
+[cols="1,1,1,3",options="header"]
+|===
+| Name           | Type   | Required/Optional | Description
+| `transactionId`  | string | Required          | The unique transaction identifier to be canceled.
+|===
+
+.HTTP-request example
+[source,http]
+----
+POST /cancel/txn_12345 HTTP/1.1
+Host: api.appletransfer.com
+Authorization: Bearer YOUR_API_KEY
+----
+
+.Success Response
+* *Code*: `200 OK`
+* *Content*:
++
+[source,json]
+----
+{
+  "message": "Transfer canceled successfully."
+}
+----
+
+=== Update transfer (`PUT`)
+
+Modifies the details of an existing apple transfer.
+
+* Endpoint: `/update/{transactionId}`
+* Method: `PUT`
+
+.Headers
+* `Content-Type: application/json`
+* `Authorization: Bearer YOUR_API_KEY`
+
+.URL parameters
+[cols="1,1,1,3",options="header"]
+|===
+| Name           | Type   | Required/Optional | Description
+| `transactionId`  | string | Required          | The unique identifier of the transaction to be updated.
+|===
+
+.Request body parameters
+[cols="1,1,1,3",options="header"]
+|===
+| Name     | Type     | Required/Optional | Description
+| `quantity` | integer  | Optional          | The new number of apples to send.
+| `variety`  | string   | Optional          | The new variety of apple.
+|===
+
+.HTTP-request example
+[source,http]
+----
+PUT /update/txn_12345 HTTP/1.1
+Host: api.appletransfer.com
+Content-Type: application/json
+Authorization: Bearer YOUR_API_KEY
+
+{
+  "quantity": 25,
+  "variety": "Honeycrisp"
+}
+----
+
+.Success response
+* *Code*: `200 OK`
+* *Content*:
++
+[source,json]
+----
+{
+  "message": "Transfer updated successfully."
+}
+----
+
+== Error handling
+
+We use standard HTTP response codes to indicate API request outcomes. Common responses include:
+
+- `400 Bad Request`: Indicates an issue with the request format or parameters.
+- `401 Unauthorized`: Occurs when the API key is missing or incorrect.
+- `404 Not Found`: Returned when a transaction cannot be located.
+- `500 Internal Server Error`: A general message for server-side issues.
+
+== Conclusion
+
+You're all set to integrate the AppleTransfer API into your application. If you encounter any challenges or have questions, our support team at support@appletransfer.com is ready to assist you. Happy coding!

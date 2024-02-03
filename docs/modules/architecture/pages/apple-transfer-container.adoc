@@ -1,0 +1,55 @@
+= AppleTransfer container architecture
+:toc:
+:toc-title: On this page
+:toclevels: 4
+:sectnums:
+:sectnumlevels: 5
+:icons: font
+:sectanchors:
+:sectnums:
+
+== Introduction
+
+The *AppleTransfer* system facilitates seamless apple transfers, offering functionalities for sending, tracking, and managing apple transfers. This document delves into the container architecture of the system, outlining the roles and interactions of various components that constitute the AppleTransfer ecosystem.
+
+== Container overview
+
+AppleTransfer's architecture is modular, comprising several containers that work together to provide a robust and scalable solution. Here's a rundown of the main containers within the system:
+
+- *Web Application*: A user-facing application built with JavaScript/React, enabling end-users and administrators to interact with the AppleTransfer functionalities.
+
+- *RESTful API*: The backend logic of the system, handling business processes, data management, and integrations with external services.
+
+- *Database*: The data persistence layer, responsible for storing user information, apple transfer records, and other relevant data.
+
+- *Authentication Service*: An external service that manages user authentication and authorization to secure access to the system.
+
+- *Payment Service*: Processes transactions, ensuring secure handling of payments associated with apple transfers.
+
+- *Notification Service*: Sends out notifications to users regarding the status of their apple transfers, alerts, and updates.
+
+- *AppleTransfer SDK*: A Python library provided for developers, facilitating the integration of AppleTransfer functionalities into third-party applications.
+
+.AppleTransfer container diagram
+[plantuml, architecture-container-diagram, png]
+----
+include::architecture:partial$apple-transfer-container.puml[]
+----
+
+== Interactions and integrations
+
+=== User interactions
+
+Users (end-users and administrators) primarily interact with the system through the *Web Application*, utilizing its interface to send apples, track transfers, and manage their accounts.
+
+=== Developer integrations
+
+Developers leverage the *AppleTransfer SDK* to incorporate apple transfer capabilities into their applications, interacting with the system's RESTful API for seamless integration.
+
+=== System communications
+
+The *Web Application* and *SDK* communicate with the *RESTful API* to perform various operations, which in turn interacts with the *Database* for data storage and retrieval. The API also verifies user identities through the *Authentication Service*, processes payments via the *Payment Service*, and triggers user notifications through the *Notification Service*.
+
+== Conclusion
+
+The container architecture of the AppleTransfer system outlines a comprehensive ecosystem designed for efficiency, security, and scalability. By segregating functionalities into distinct containers, the system ensures a smooth and secure experience for users and developers alike, facilitating easy management and integration of apple transfer processes.

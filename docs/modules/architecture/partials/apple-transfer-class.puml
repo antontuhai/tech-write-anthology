@@ -1,0 +1,22 @@
+@startuml AppleTransfer SDK Class Diagram
+
+class AppleTransferClient {
+    +apiKey: String
+    +baseUrl: String
+    +send_apples(recipientSystem, quantity, variety): AppleTransaction
+    +check_status(transactionId): Status
+    +cancel_transfer(transactionId): Response
+    +update_transfer(transactionId, quantity, variety): Response
+}
+
+class AppleTransaction {
+    -client: AppleTransferClient
+    -transactionId: String
+    +status(): Status
+    +cancel(): Response
+    +update(quantity, variety): Response
+}
+
+AppleTransferClient --> AppleTransaction : creates
+
+@enduml

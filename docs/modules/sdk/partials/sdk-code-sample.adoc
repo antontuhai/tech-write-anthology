@@ -1,0 +1,54 @@
+.AppleTransfer SDK (Python)
+[source,python]
+----
+import requests
+
+class AppleTransferClient:
+    def __init__(self, api_key, base_url="https://api.appletransfer.com/v1"):
+        self.api_key = api_key
+        self.base_url = base_url
+
+    def send_apples(self, recipient_system, quantity, variety):
+        data = {
+            "recipientSystem": recipient_system,
+            "quantity": quantity,
+            "variety": variety
+        }
+        response = self._post("/send", data)
+        return AppleTransaction(self, response["transactionId"])
+
+    def check_status(self, transaction_id):
+        return self._get(f"/status/{transaction_id}")
+
+    def _post(self, endpoint, data):
+        url = f"{self.base_url}{endpoint}"
+        headers = {"Authorization": f"Bearer {self.api_key}"}
+        response = requests.post(url, headers=headers, json=data)
+        response.raise_for_status()
+        return response.json()
+
+    def _get(self, endpoint):
+        url = f"{self.base_url}{endpoint}"
+        headers = {"Authorization": f"Bearer {self.api_key}"}
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()
+        return response.json()
+
+class AppleTransaction:
+    def __init__(self, client, transaction_id):
+        self.client = client
+        self.transaction_id = transaction_id
+
+    def status(self):
+        return self.client.check_status(self.transaction_id)
+
+    def cancel(self):
+        return self.client._post(f"/cancel/{self.transaction_id}", {})
+
+    def update(self, quantity=None, variety=None):
+        data = {
+            "quantity": quantity,
+            "variety": variety
+        }
+        return self.client._post(f"/update/{self.transaction_id}", data)
+----
