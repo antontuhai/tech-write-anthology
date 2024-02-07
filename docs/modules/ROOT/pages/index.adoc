@@ -20,11 +20,16 @@ image:techwriteme-logo.png[]
 * [*] *Learn*: Gain insights from various technical and content writing perspectives.
 * [*] *Share*: Got a great doc sample? Contribute and enrich our community.
 
-== Dive into our collection
+== Spotlight on our docs
+
+Delve into the wealth of knowledge in our documentation samples. And remember, this is just the beginning—anticipate much more to come!
+
+* [*] xref:architecture:apple-transfer-overview.adoc[]
+* [*] xref:api:apple-transfer-api-overview.adoc[]
+* [*] xref:sdk:apple-transfer-sdk-overview.adoc[]
 
 //* [*] xref:user:user-overview.adoc[User Overview] - User experience, simplified.
 //* [*] xref:admin:admin-overview.adoc[Admin Overview] - For the wizards of admin work.
-* [*] xref:api:api-overview.adoc[API Overview] - APIs decoded.
 //* [*] xref:sdk:sdk-overview.adoc[SDK Overview] - Your SDK guidebook.
 
 == Your contribution counts

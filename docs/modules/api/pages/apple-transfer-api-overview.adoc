@@ -1,0 +1,11 @@
+= Delving into the AppleTransfer API
+:sectlinks:
+
+Welcome to the AppleTransfer API documentation, where you'll find comprehensive information on seamlessly integrating our apple transfer services into your applications.
+
+== Documentation samples
+
+Explore a collection of documentation samples to get started quickly:
+
+* xref:asciidoc-format/apple-transfer.adoc[]
+* xref:openapi/apple-transfer.adoc[OpenAPI: AppleTransfer specification]

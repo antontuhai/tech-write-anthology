@@ -1,0 +1,18 @@
+= Navigating the AppleTransfer architecture
+:sectlinks:
+
+Welcome to the core of the AppleTransfer system, where we uncover the inner workings that make sending and tracking apple transfers effortless. This section will dive into the architecture that powers our seamless solution, shedding light on user interactions and our integration with external services.
+
+== What awaits you
+
+As you navigate through this documentation, you'll embark on a journey through the AppleTransfer architecture, including:
+
+* xref:architecture:apple-transfer-context.adoc[]: Discover how the AppleTransfer system seamlessly integrates into its broader ecosystem, connecting with users and external services.
+
+* xref:architecture:apple-transfer-container.adoc[]: Explore our modular structure, where containers work harmoniously to provide a robust and scalable solution.
+
+* xref:architecture:apple-transfer-component.adoc[]: Delve into the individual components that power our system, each playing a vital role in its functionality.
+
+* xref:architecture:apple-transfer-class.adoc[]: Gain insights into the intricate workings of our system's classes and their crucial roles in ensuring smooth apple transfer operations.
+
+Prepare to embark on a journey through the architecture that drives the AppleTransfer system, where efficiency, security, and scalability are woven into our design philosophy. Let's explore together!

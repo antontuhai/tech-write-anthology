@@ -1,0 +1,12 @@
+= Exploring the AppleTransfer SDK
+:sectlinks:
+
+Welcome to the AppleTransfer SDK documentation, your gateway to integrating apple transfer capabilities seamlessly into your Python applications.
+
+Discover the powerful features of our AppleTransfer SDK, designed to simplify sending apples between systems, checking transaction statuses, and managing apple transfers efficiently.
+
+== Documentation samples
+
+Explore a collection of documentation samples to get started with the AppleTransfer SDK quickly:
+
+* xref:sdk:asciidoc-format/sdk-apple-transfer.adoc[AppleTransfer API Python SDK]

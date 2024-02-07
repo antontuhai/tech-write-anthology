@@ -1,4 +1,4 @@
 //* xref:api:api-overview.adoc[]
-* API documentation
+* xref:api:apple-transfer-api-overview.adoc[API documentation]
 ** xref:api:asciidoc-format/apple-transfer.adoc[]
 ** xref:api:openapi/apple-transfer.adoc[OpenAPI: AppleTransfer]

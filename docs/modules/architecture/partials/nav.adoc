@@ -1,4 +1,4 @@
-* Architecture documentation
+* xref:architecture:apple-transfer-overview.adoc[Architecture documentation]
 ** xref:architecture:apple-transfer-context.adoc[]
 ** xref:architecture:apple-transfer-container.adoc[]
 ** xref:architecture:apple-transfer-component.adoc[]

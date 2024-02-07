@@ -58,4 +58,4 @@ Turn your users into contributors with a collaborative, community-focused approa
 
 == Section overview
 
-* xref:asciidoc-format/apple-transfer.adoc[]
+NOTE: Section is under development.
