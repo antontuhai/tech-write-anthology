@@ -1,2 +1,2 @@
 # techwriteme
-This repository is for writing technical docs.
+This repository is for sharing technical writing experience.
