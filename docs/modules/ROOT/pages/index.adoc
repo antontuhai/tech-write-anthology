@@ -12,7 +12,7 @@
 
 Here's a space where tech writing comes alive. *_Tech Write Me_* is an open-source project that shares and enhances tech writing knowledge. Think of us as a collaborative playground for documents, ideas, and fun.
 
-image:techwriteme-logo.png[]
+//image:techwriteme-logo.png[]
 
 == Explore tech writing like never before
 
@@ -28,7 +28,7 @@ Delve into the wealth of knowledge in our documentation samples. And remember, t
 * [*] xref:api:apple-transfer-api-overview.adoc[]
 * [*] xref:sdk:apple-transfer-sdk-overview.adoc[]
 
-//* [*] xref:user:user-overview.adoc[User Overview] - User experience, simplified.
+//* [*] xref: - User experience, simplified.
 //* [*] xref:admin:admin-overview.adoc[Admin Overview] - For the wizards of admin work.
 //* [*] xref:sdk:sdk-overview.adoc[SDK Overview] - Your SDK guidebook.
 
