@@ -1,0 +1,15 @@
+= Jovial Jokes API reference
+
+Welcome to the *Jovial Jokes API Reference*!
+
+This page showcases a sample API reference for the *Jovial Jokes API*, created and published as a Postman documentation page.
+
+The *Jovial Jokes API* is a playful RESTful service designed to bring humor to life in JSON format. Its intuitive endpoints allow users to easily:
+
+* Fetch jokes from an extensive database.
+* Add new jokes to the collection.
+* Manage and organize comedic content seamlessly.
+
+The API integrates effortlessly with the *Jovial Jokes Web Interface*, providing a smooth and enjoyable experience for exploring its main features.
+
+Ready to dive into the humor? Check out the full reference here: https://documenter.getpostman.com/view/7731822/2sAYBXBWPv[Jovial Jokes API Reference].
