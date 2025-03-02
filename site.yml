@@ -24,6 +24,7 @@ asciidoc:
   attributes:
     kroki-server-url: 'https://kroki.io'
     kroki-fetch-diagram: true
+    page-pagination: ''
   extensions:
     - asciidoctor-plantuml
     - ./supplemental-ui/extensions/swagger.extension
