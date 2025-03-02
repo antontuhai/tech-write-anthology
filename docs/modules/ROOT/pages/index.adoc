@@ -1,4 +1,4 @@
-= Tech Write Me
+= The Anthology of Technical Writing
 :toc-title: On this page:
 :toc: auto
 :toclevels: 5
@@ -8,32 +8,44 @@
 :sectlinks:
 :partnums:
 
-== Welcome to Tech Write Me!
+== Welcome to The Anthology of Technical Writing
 
-Here's a space where tech writing comes alive. *_Tech Write Me_* is an open-source project that shares and enhances tech writing knowledge. Think of us as a collaborative playground for documents, ideas, and fun.
+This is a place where **technical writing comes to life**. *_The Anthology of Technical Writing_* is my open-source knowledge base, built to share experiences, insights, and best practices in **software documentation, tech communication, and information development**.
 
-//image:techwriteme-logo.png[]
+Whether you're just starting out or have been writing docs for years, this project is here to **help you explore, learn, and create** better documentation.
 
-== Explore tech writing like never before
+== What you’ll find here
 
-* [*] *Discover*: From user guides to API documentation, find samples that spark ideas.
-* [*] *Learn*: Gain insights from various technical and content writing perspectives.
-* [*] *Share*: Got a great doc sample? Contribute and enrich our community.
+* [*] *Discover*: A growing collection of **user guides, API docs, and structured documentation samples**.
+* [*] *Learn*: Insights on **technical writing techniques, content structuring, and documentation workflows**.
+* [*] *Share*: Have a great doc sample or a tip? **Contribute and make an impact!**
 
-== Spotlight on our docs
+== Writing that makes a difference
 
-Delve into the wealth of knowledge in our documentation samples. And remember, this is just the beginning—anticipate much more to come!
+Technical writing isn’t just about documenting features—it’s about **understanding complex ideas and making them accessible**.
 
-* [*] xref:architecture:apple-transfer-overview.adoc[]
-* [*] xref:api:apple-transfer-api-overview.adoc[]
-* [*] xref:sdk:apple-transfer-sdk-overview.adoc[]
+To be truly effective, you need to **dive deep into the details** of a product or system and explain them in a way that makes sense to your audience. That’s what *_The Anthology of Technical Writing_* is all about—helping writers do their job better by sharing:
 
-//* [*] xref: - User experience, simplified.
-//* [*] xref:admin:admin-overview.adoc[Admin Overview] - For the wizards of admin work.
-//* [*] xref:sdk:sdk-overview.adoc[SDK Overview] - Your SDK guidebook.
+- **Best practices for writing clear, structured, and useful documentation**
+- **Real-world examples of technical content done right**
+- **Tips on making documentation more effective for users**
 
-== Your contribution counts
+This project isn’t about being perfect—it’s about **learning, experimenting, and improving together**. If even one idea here helps you improve your writing, I’d call that a success!
 
-Got a knack for tech writing? Your contributions are what make this community thrive. Join us at https://github.com/antontuhai/techwriteme[GitHub - Tech Write Me] and help shape the future of technical documentation.
+== Docs & resources
 
-*_Tech Write Me_* is more than a project; it's where your writing makes a difference.
+Check out some of the documentation samples already available. There’s more to come!
+
+* [*] xref:architecture:apple-transfer-overview.adoc[Architecture docs examples]
+* [*] xref:api:apple-transfer-api-overview.adoc[API docs examples]
+* [*] xref:sdk:apple-transfer-sdk-overview.adoc[SDK docs examples]
+
+== Join in!
+
+*_The Anthology of Technical Writing_* is an open project, and **your contributions matter**. Whether you want to refine existing content, share your own documentation insights, or just follow along and learn, you’re always welcome.
+
+Join the project at
+https://github.com/antontuhai/tech-write-anthology[GitHub - The Anthology of Technical Writing]
+and be part of a community that’s shaping the future of technical documentation.
+
+*Let’s make tech writing better—together.* 🚀
