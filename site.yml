@@ -1,12 +1,12 @@
 site:
-  title: Tech Write Me
+  title: The Anthology of Technical Writing
   start_page: documentation:ROOT:index.adoc
 #  url: /en
 runtime:
   fetch: true
 content:
   sources:
-    - url: https://github.com/antontuhai/techwriteme
+    - url: https://github.com/antontuhai/tech-write-anthology
       branches: ["master"]
       start_path: docs
 
