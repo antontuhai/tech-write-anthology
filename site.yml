@@ -1,12 +1,14 @@
 site:
   title: The Anthology of Technical Writing
   start_page: documentation:ROOT:index.adoc
-#  url: /en
+
 runtime:
   fetch: true
+
 content:
   sources:
     - url: https://github.com/antontuhai/tech-write-anthology
+      type: git
       branches: ["master"]
       start_path: docs
 
@@ -16,7 +18,7 @@ output:
 
 ui:
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    url: ./supplemental-ui
     snapshot: true
   supplemental_files: ./supplemental-ui
 
