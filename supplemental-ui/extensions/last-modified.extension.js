@@ -43,6 +43,7 @@ class LastModifiedExtension {
 
   async onContentClassified({ contentCatalog }) {
       console.log("🔍 Injecting last updated timestamps...");
+
       contentCatalog.getFiles().forEach((file) => {
           console.log(`🔎 Checking file: ${file.src.relative}`);
 
@@ -57,6 +58,8 @@ class LastModifiedExtension {
               console.log(`⚠️ No last-updated found for ${file.src.relative}`);
           }
       });
+
+      console.log("📄 Content classification finished.");
   }
 
 }
