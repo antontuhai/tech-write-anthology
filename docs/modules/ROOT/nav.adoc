@@ -1,4 +1,4 @@
-//include::admin:partial$nav.adoc[]
+include::admin:partial$nav.adoc[]
 //include::user:partial$nav.adoc[]
 include::architecture:partial$nav.adoc[]
 include::api:partial$nav.adoc[]
