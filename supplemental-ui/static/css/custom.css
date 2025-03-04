@@ -1,0 +1,10 @@
+ul.custom-bullets {
+    list-style: none; /* Removes default bullets */
+    padding-left: 0;
+}
+
+ul.custom-bullets li::before {
+    content: "🔹 "; /* Unicode for a diamond bullet */
+    font-size: 1.1em; /* Adjust size if needed */
+    margin-right: 5px;
+}

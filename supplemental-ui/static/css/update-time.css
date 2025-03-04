@@ -3,4 +3,15 @@
   color: #666;
   margin-top: 5px;
   font-style: italic;
+  text-align: right; /* Вирівнюємо текст по правому краю */
+  display: flex;
+  justify-content: flex-end; /* Вирівнюємо елементи справа */
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap; /* Запобігаємо переносу тексту на новий рядок */
+}
+
+.update-time::before {
+  content: "📅";
+  margin-right: 5px;
 }

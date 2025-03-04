@@ -1,75 +1,54 @@
 = The Anthology of Technical Writing
-:toc-title: On this page:
-:toc: macro
-:toclevels: 5
-:experimental:
-:sectnumlevels: 5
-:sectanchors:
-:sectlinks:
-:partnums:
+include::partial$attributes/default-set.adoc[]
 
-////
-[role="update-time"]
-_&#128197; Last updated: {docdate}_
+== Welcome
 
-[subs="attributes+"]
-++++
-<style>
-.update-time {
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 5px;
-  font-style: italic;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-</style>
-++++
+Hey there 👋! Glad you stopped by. I'm Anton, a **Technical Writer** and **Documentation Engineer**.
 
-////
+This site is where I share my experience in **technical writing, software documentation, and information development**. Whether you're new to the field or an experienced writer, I hope you find something useful here.
+
+image::documentation:ROOT:tech-write-anthology-index-2.webp[]
+
+My goal is to provide valuable insights for those looking to deepen their understanding of **information technology, software engineering, and related disciplines**—all through the lens of **technical writing, technical communication, information development, and documentation operations (DocOps)**, or whatever you prefer to call it.
 
 
-== Welcome to The Anthology of Technical Writing
+== Writing That Makes a Difference
 
-This is a place where **technical writing comes to life**. *_The Anthology of Technical Writing_* is my open-source knowledge base, built to share experiences, insights, and best practices in **software documentation, tech communication, and information development**.
+Technical writing is more than just explaining how something works. It’s about making complex information **clear, accessible, and actionable**.
 
-image:documentation:ROOT:tech-write-anthology-index-2.webp[]
+To create truly effective documentation, you need to understand not just the product, but the entire ecosystem around it. That means diving deep into the details and presenting information in a way that **resonates with your audience**.
 
-Whether you're just starting out or have been writing docs for years, this project is here to **help you explore, learn, and create** better documentation.
+I don’t claim to be the best or the most accomplished expert, but through this homegrown knowledge base, I want to share what I’ve learned. My goal is to exchange knowledge through a variety of articles—whether you read them all or just find one useful tip.
 
-== What you’ll find here
+*_The Anthology of Technical Writing_* is here to help you **explore, learn, and create** better documentation.
 
-* [*] *Discover*: A growing collection of **user guides, API docs, and structured documentation samples**.
-* [*] *Learn*: Insights on **technical writing techniques, content structuring, and documentation workflows**.
-* [*] *Share*: Have a great doc sample or a tip? **Contribute and make an impact!**
+This project isn't about being perfect—it’s about **learning, experimenting, and improving together**. If even one idea here helps you refine your writing, that’s a win.
 
-== Writing that makes a difference
+== What You'll Find Here
 
-Technical writing isn’t just about documenting features—it’s about **understanding complex ideas and making them accessible**.
+On this site, you can:
 
-To be truly effective, you need to **dive deep into the details** of a product or system and explain them in a way that makes sense to your audience. That’s what *_The Anthology of Technical Writing_* is all about—helping writers do their job better by sharing:
+* [*] **Discover**: A growing collection of **user guides, API documentation, and structured writing samples**.
+* [*] **Learn**: Insights on **technical writing techniques, content structuring, and documentation workflows**.
+* [*] **Share**: Have a useful documentation sample or a tip? *Contribute and make an impact!*
 
-- **Best practices for writing clear, structured, and useful documentation**
-- **Real-world examples of technical content done right**
-- **Tips on making documentation more effective for users**
+== Docs & Resources
 
-This project isn’t about being perfect—it’s about **learning, experimenting, and improving together**. If even one idea here helps you improve your writing, I’d call that a success!
+Explore some of the documentation samples available:
 
-== Docs & resources
+* [*] xref:architecture:apple-transfer-overview.adoc[Architecture Documentation Examples]
+* [*] xref:api:apple-transfer-api-overview.adoc[API Documentation Examples]
+* [*] xref:sdk:apple-transfer-sdk-overview.adoc[SDK Documentation Examples]
 
-Check out some of the documentation samples already available. There’s more to come!
+More to come!
 
-* [*] xref:architecture:apple-transfer-overview.adoc[Architecture docs examples]
-* [*] xref:api:apple-transfer-api-overview.adoc[API docs examples]
-* [*] xref:sdk:apple-transfer-sdk-overview.adoc[SDK docs examples]
+== Join In!
 
-== Join in!
+*_The Anthology of Technical Writing_* is an open project, and *your contributions matter*.
 
-*_The Anthology of Technical Writing_* is an open project, and **your contributions matter**. Whether you want to refine existing content, share your own documentation insights, or just follow along and learn, you’re always welcome.
+Whether you want to refine existing content, share your own insights, or simply follow along and learn, you're always welcome.
 
-Join the project at
-https://github.com/antontuhai/tech-write-anthology[GitHub - The Anthology of Technical Writing]
-and be part of a community that’s shaping the future of technical documentation.
+🔗 **Join the project on GitHub:**
+https://github.com/antontuhai/tech-write-anthology[GitHub - The Anthology of Technical Writing].
 
-*Let’s make tech writing better—together.* 🚀
+Let’s build **better documentation—together.** 🚀
