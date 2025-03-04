@@ -47,7 +47,11 @@ class LastModifiedExtension {
       contentCatalog.getFiles().forEach((file) => {
           console.log(`🔎 Checking file: ${file.src.relative}`);
 
-          let relativePath = file.src.relative.replace(/^docs\//, "");
+          // Виправлення: нормалізуємо шлях
+          let relativePath = file.src.relative.replace(/^docs\//, "").replace(/^.\//, "");
+
+          console.log(`🛠 Normalized path: ${relativePath}`);
+
           const entry = this.lastModifiedData.find((item) => item.file === relativePath);
 
           if (entry) {
