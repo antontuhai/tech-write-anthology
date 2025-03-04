@@ -1,4 +1,4 @@
-.update-time {
+.reading-time {
   font-size: 0.9rem;
   color: #666;
   margin-top: 5px;
@@ -12,6 +12,6 @@
   white-space: nowrap;
 }
 
-.update-time::before {
+.reading-time::before {
   margin-right: 5px;
 }
