@@ -7,9 +7,26 @@
 :sectanchors:
 :sectlinks:
 :partnums:
-:revdate:
+:revdate: 2025-03-04
 
-_Last updated at {revdate}_
+[subs="attributes+"]
+++++
+<style>
+.update-time {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 5px;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+</style>
+++++
+
+[role="update-time"]
+&#128197; Last updated at {revdate}
+
 
 == Welcome to The Anthology of Technical Writing
 
