@@ -1,6 +1,6 @@
 = The Anthology of Technical Writing
 :toc-title: On this page:
-:toc: preamble
+:toc: macro
 :toclevels: 5
 :experimental:
 :sectnumlevels: 5
