@@ -9,7 +9,7 @@
 :partnums:
 
 [role="update-time"]
-_&#128197; Last updated: {docdatetime}_
+_&#128197; Last updated: {docdate}_
 
 [subs="attributes+"]
 ++++
