@@ -1,4 +1,5 @@
 = The Anthology of Technical Writing
+:docdate: 2025-03-04
 :toc-title: On this page:
 :toc: preamble
 :toclevels: 5
@@ -8,6 +9,8 @@
 :sectlinks:
 :partnums:
 :revdate: 2025-03-04
+
+_&#128197; Last updated: {docdate}_
 
 [subs="attributes+"]
 ++++
@@ -25,7 +28,7 @@
 ++++
 
 [role="update-time"]
-&#128197; Last updated at {revdate}
+&#128197; Last updated: {revdate}
 
 
 == Welcome to The Anthology of Technical Writing
