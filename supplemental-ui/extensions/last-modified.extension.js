@@ -15,7 +15,8 @@ class LastModifiedExtension {
 
   constructor(config) {
     this.config = config;
-    this.dbFile = path.resolve(__dirname, "../../../last_modified.json");
+    const projectRoot = path.resolve(__dirname, "../../../../");
+    this.dbFile = path.join(projectRoot, "last_modified.json");
     this.lastModifiedData = this.loadLastModifiedData();
   }
 
