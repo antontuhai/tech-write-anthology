@@ -27,8 +27,7 @@ asciidoc:
     kroki-fetch-diagram: true
     page-pagination: ''
   extensions:
-    - asciidoctor-plantuml
+#    - asciidoctor-plantuml
     - ./supplemental-ui/extensions/swagger.extension.js
-    - ./supplemental-ui/extensions/last-modified.extension.js
 #    - '@asciidoctor/tabs'
     - asciidoctor-kroki

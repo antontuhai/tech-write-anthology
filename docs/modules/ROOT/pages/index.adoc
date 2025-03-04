@@ -7,10 +7,6 @@
 :sectanchors:
 :sectlinks:
 :partnums:
-:page-last-updated: {last-updated}
-
-Last updated at {page-last-updated}
-
 
 ////
 [role="update-time"]
