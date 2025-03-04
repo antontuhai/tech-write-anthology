@@ -17,13 +17,23 @@
       {{/if}}
     </div>
   </nav>
+
+    <!-- Тут показуємо дату останнього оновлення -->
+    {{#if page.git.lastCommit}}
+        <div class="update-time">
+            Last updated: {{ page.git.lastCommit.time }}
+        </div>
+    {{else}}
+        <div class="update-time">
+            No git data found
+        </div>
+    {{/if}}
+
 </header>
 
 <link rel="stylesheet" href="{{uiRootPath}}/vendor/swagger/4.15.5/swagger-ui.min.css">
 <link rel="stylesheet" href="{{uiRootPath}}/vendor/swagger/4.15.5/swagger-custom.css">
 <link rel="stylesheet" href="{{{uiRootPath}}}/vendor/medium-zoom/medium-zoom.css">
 <link rel="stylesheet" href="{{{uiRootPath}}}/vendor/tabs/1.0.0-beta.3/tabs.css">
-<link rel="stylesheet" href="{{{uiRootPath}}}/static/css/language-selector.css">
-<link rel="stylesheet" href="{{{uiRootPath}}}/static/css/custom-site.css">
 <link rel="stylesheet" href="{{{uiRootPath}}}/static/css/reading-time.css">
 <link rel="stylesheet" href="{{uiRootPath}}/static/css/update-time.css">
