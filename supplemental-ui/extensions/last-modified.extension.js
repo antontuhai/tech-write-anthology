@@ -22,20 +22,21 @@ class LastModifiedExtension {
   }
 
   async onContentClassified({ contentCatalog }) {
-    console.log("Injecting last updated timestamps...");
-    contentCatalog.getFiles().forEach((file) => {
-      // Очищаємо "docs/" з початку шляху (якщо воно є)
-      let relativePath = file.src.relative.replace(/^docs\//, "");
+      console.log("🔍 Injecting last updated timestamps...");
+      contentCatalog.getFiles().forEach((file) => {
+          console.log(`🔎 Checking file: ${file.src.relative}`);
 
-      // Шукаємо запис у last_modified.json
-      const entry = this.lastModifiedData.find((item) => item.file === relativePath);
-      if (entry) {
-        file.asciidoc.attributes["last-updated"] = new Date(entry.timestamp * 1000).toISOString();
-        console.log(`✅ Set last-updated for ${file.src.relative}: ${file.asciidoc.attributes["last-updated"]}`);
-      } else {
-        console.log(`⚠️ No last-updated found for ${file.src.relative}`);
-      }
-    });
+          let relativePath = file.src.relative.replace(/^docs\//, "");
+
+          const entry = this.lastModifiedData.find((item) => item.file === relativePath);
+          if (entry) {
+              let lastUpdated = new Date(entry.timestamp * 1000).toISOString();
+              file.asciidoc.attributes["last-updated"] = lastUpdated;
+              console.log(`✅ Set last-updated for ${file.src.relative}: ${lastUpdated}`);
+          } else {
+              console.log(`⚠️ No last-updated found for ${file.src.relative}`);
+          }
+      });
   }
 }
 
