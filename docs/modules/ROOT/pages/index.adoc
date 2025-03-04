@@ -8,6 +8,10 @@
 :sectlinks:
 :partnums:
 
+Last updated at {last-updated}
+
+
+////
 [role="update-time"]
 _&#128197; Last updated: {docdate}_
 
@@ -25,6 +29,8 @@ _&#128197; Last updated: {docdate}_
 }
 </style>
 ++++
+
+////
 
 
 == Welcome to The Anthology of Technical Writing

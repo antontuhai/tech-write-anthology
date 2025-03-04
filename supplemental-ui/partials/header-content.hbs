@@ -18,6 +18,12 @@
     </div>
   </nav>
 
+    {{#if page.attributes.last-updated}}
+        <div class="last-updated">
+            Last updated at {{page.attributes.last-updated}}
+        </div>
+    {{/if}}
+
 </header>
 
 <link rel="stylesheet" href="{{uiRootPath}}/vendor/swagger/4.15.5/swagger-ui.min.css">

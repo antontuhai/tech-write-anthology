@@ -8,7 +8,6 @@ runtime:
 content:
   sources:
     - url: https://github.com/antontuhai/tech-write-anthology
-      type: git
       branches: ["master"]
       start_path: docs
 
@@ -29,6 +28,7 @@ asciidoc:
     page-pagination: ''
   extensions:
     - asciidoctor-plantuml
-    - ./supplemental-ui/extensions/swagger.extension
+    - ./supplemental-ui/extensions/swagger.extension.js
+    - ./supplemental-ui/extensions/last-modified.extension.js
 #    - '@asciidoctor/tabs'
     - asciidoctor-kroki
