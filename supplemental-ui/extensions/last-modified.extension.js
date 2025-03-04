@@ -21,11 +21,14 @@ class LastModifiedExtension {
 
   loadLastModifiedData() {
     if (fs.existsSync(this.dbFile)) {
-      console.log(`📂 Loaded last_modified.json`);
-      return JSON.parse(fs.readFileSync(this.dbFile, "utf8"));
+        console.log(`📂 Loaded last_modified.json from ${this.dbFile}`);
+        let data = JSON.parse(fs.readFileSync(this.dbFile, "utf8"));
+        console.log(`📝 Found ${data.length} entries in last_modified.json`);
+        return data;
     }
-    console.log("⚠️ last_modified.json not found!");
+    console.log(`❌ last_modified.json not found at ${this.dbFile}`);
     return [];
+
   }
 
   async onContentClassified({ contentCatalog }) {
