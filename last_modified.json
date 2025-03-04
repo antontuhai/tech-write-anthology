@@ -1,6 +1,7 @@
 [
 {"file": ".gitignore", "timestamp": 1706188524},
 {"file": "README.md", "timestamp": 1740925544},
+{"file": "antora-debug.log", "timestamp": 1741089277},
 {"file": "docs/antora.yml", "timestamp": 1740931198},
 {"file": "docs/modules/ROOT/images/tech-write-anthology-index-2.webp", "timestamp": 1741055661},
 {"file": "docs/modules/ROOT/images/tech-write-anthology-index.webp", "timestamp": 1741055357},
@@ -34,7 +35,7 @@
 {"file": "docs/modules/sdk/partials/sdk-code-sample.adoc", "timestamp": 1706931621},
 {"file": "docs/modules/user/pages/user-overview.adoc", "timestamp": 1706188524},
 {"file": "docs/modules/user/partials/nav.adoc", "timestamp": 1706188524},
-{"file": "last_modified.json", "timestamp": 1741088732},
+{"file": "last_modified.json", "timestamp": 1741089277},
 {"file": "package.json", "timestamp": 1706932657},
 {"file": "site.yml", "timestamp": 1741087165},
 {"file": "supplemental-ui/extensions/last-modified.extension.js", "timestamp": 1741088732},
