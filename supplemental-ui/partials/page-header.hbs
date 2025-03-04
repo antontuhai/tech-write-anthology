@@ -1,12 +1,5 @@
-{{!-- page-header.hbs --}}
-<header class="page-header">
-    {{!-- Якщо хочете відображати заголовок сторінки з AsciiDoc: --}}
-    <h1 class="page-title">{{ page.title }}</h1>
-
-    {{!-- Якщо хочете відображати дату останнього оновлення (з Git): --}}
-    {{#if page.git.lastCommit}}
-        <div class="update-time">
-            Last updated: {{ page.git.lastCommit.time }}
-        </div>
-    {{/if}}
-</header>
+{{#if page.git.lastCommit}}
+    <div class="update-time">
+        Last updated: {{ page.git.lastCommit.time }}
+    </div>
+{{/if}}
