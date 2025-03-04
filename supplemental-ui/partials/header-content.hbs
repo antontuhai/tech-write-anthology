@@ -18,17 +18,6 @@
     </div>
   </nav>
 
-    <!-- Тут показуємо дату останнього оновлення -->
-    {{#if page.git.lastCommit}}
-        <div class="update-time">
-            Last updated: {{ page.git.lastCommit.time }}
-        </div>
-    {{else}}
-        <div class="update-time">
-            No git data found
-        </div>
-    {{/if}}
-
 </header>
 
 <link rel="stylesheet" href="{{uiRootPath}}/vendor/swagger/4.15.5/swagger-ui.min.css">
