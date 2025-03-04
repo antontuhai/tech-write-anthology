@@ -31,6 +31,8 @@ _&#128197; Last updated: {docdate}_
 
 This is a place where **technical writing comes to life**. *_The Anthology of Technical Writing_* is my open-source knowledge base, built to share experiences, insights, and best practices in **software documentation, tech communication, and information development**.
 
+image:documentation:ROOT:tech-write-anthology-index.webp[]
+
 Whether you're just starting out or have been writing docs for years, this project is here to **help you explore, learn, and create** better documentation.
 
 == What you’ll find here
