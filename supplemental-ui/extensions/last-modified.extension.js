@@ -44,10 +44,12 @@ class LastModifiedExtension {
   async onContentClassified({ contentCatalog }) {
       console.log("🔍 Injecting last updated timestamps...");
 
-      contentCatalog.getFiles().forEach((file) => {
+      const files = contentCatalog.getFiles();
+      console.log(`📂 Found ${files.length} files in content catalog`);
+
+      files.forEach((file) => {
           console.log(`🔎 Checking file: ${file.src.relative}`);
 
-          // Виправлення: нормалізуємо шлях
           let relativePath = file.src.relative.replace(/^docs\//, "").replace(/^.\//, "");
 
           console.log(`🛠 Normalized path: ${relativePath}`);
