@@ -1,6 +1,7 @@
 "use strict";
 const fs = require("fs");
 const path = require("path");
+const { execSync } = require("child_process");
 
 class LastModifiedExtension {
   static register({ config }) {
@@ -15,21 +16,29 @@ class LastModifiedExtension {
 
   constructor(config) {
     this.config = config;
-    const projectRoot = path.resolve(__dirname, "../../../../");
+
+    // Визначаємо корінь проєкту через Git
+    let projectRoot;
+    try {
+      projectRoot = execSync("git rev-parse --show-toplevel").toString().trim();
+      console.log(`📂 Detected project root: ${projectRoot}`);
+    } catch (error) {
+      console.error("❌ Failed to detect project root, using default.");
+      projectRoot = path.resolve(__dirname, "../../..");
+    }
+
     this.dbFile = path.join(projectRoot, "last_modified.json");
+    console.log(`📄 Looking for last_modified.json at: ${this.dbFile}`);
     this.lastModifiedData = this.loadLastModifiedData();
   }
 
   loadLastModifiedData() {
     if (fs.existsSync(this.dbFile)) {
-        console.log(`📂 Loaded last_modified.json from ${this.dbFile}`);
-        let data = JSON.parse(fs.readFileSync(this.dbFile, "utf8"));
-        console.log(`📝 Found ${data.length} entries in last_modified.json`);
-        return data;
+      console.log(`📂 Loaded last_modified.json`);
+      return JSON.parse(fs.readFileSync(this.dbFile, "utf8"));
     }
     console.log(`❌ last_modified.json not found at ${this.dbFile}`);
     return [];
-
   }
 
   async onContentClassified({ contentCatalog }) {
