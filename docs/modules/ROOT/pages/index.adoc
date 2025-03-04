@@ -12,7 +12,7 @@ image::documentation:ROOT:tech-write-anthology-index-2.webp[]
 My goal is to provide valuable insights for those looking to deepen their understanding of **information technology, software engineering, and related disciplines**—all through the lens of **technical writing, technical communication, information development, and documentation operations (DocOps)**, or whatever you prefer to call it.
 
 
-== Writing That Makes a Difference
+== Writing that makes a difference
 
 Technical writing is more than just explaining how something works. It’s about making complex information **clear, accessible, and actionable**.
 
@@ -24,7 +24,7 @@ I don’t claim to be the best or the most accomplished expert, but through this
 
 This project isn't about being perfect—it’s about **learning, experimenting, and improving together**. If even one idea here helps you refine your writing, that’s a win.
 
-== What You'll Find Here
+== What you'll find here
 
 On this site, you can:
 
@@ -42,7 +42,7 @@ Explore some of the documentation samples available:
 
 More to come!
 
-== Join In!
+== Join in!
 
 *_The Anthology of Technical Writing_* is an open project, and *your contributions matter*.
 
